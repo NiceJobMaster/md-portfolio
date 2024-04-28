@@ -5,7 +5,7 @@ type Props = {img: string; width: string | number};
 
 const Thumbnail: React.FC<Props> = (props) => {
     return (
-        <a className="carousel-item modal-trigger">
+        <a className="carousel-item">
             <img
                 style={{maxWidth: props.width}}
                 src={props.img}
