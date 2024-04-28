@@ -79,7 +79,7 @@ const App: React.FC = () => {
                     </Swiper>
 
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={3}
                         centeredSlides={true}
                         pagination={{
                             clickable: true,
@@ -87,9 +87,6 @@ const App: React.FC = () => {
                         loop={true}
                         modules={[Pagination]}
                         breakpoints={{
-                            850: {
-                                slidesPerView: 5,
-                            },
                             1230: {
                                 slidesPerView: 5,
                             },
