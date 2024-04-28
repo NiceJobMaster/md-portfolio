@@ -57,7 +57,7 @@ const App: React.FC = () => {
             ) : (
                 <div>
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={3}
                         centeredSlides={true}
                         pagination={{
                             clickable: true,
@@ -66,12 +66,14 @@ const App: React.FC = () => {
                         modules={[Pagination]}
                         breakpoints={{
                             1230: {
-                                slidesPerView: 3,
+                                slidesPerView: 5,
                             },
                         }}>
                         {youtube?.map((el) => (
                             <SwiperSlide key={el.img}>
-                                <Thumbnail width={400} img={el.img}></Thumbnail>
+                                <Thumbnail
+                                    type={'vertical'}
+                                    img={el.img}></Thumbnail>
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -86,7 +88,7 @@ const App: React.FC = () => {
                         modules={[Pagination]}
                         breakpoints={{
                             850: {
-                                slidesPerView: 3,
+                                slidesPerView: 5,
                             },
                             1230: {
                                 slidesPerView: 5,
@@ -95,7 +97,9 @@ const App: React.FC = () => {
                         className="vertSwiper">
                         {shortAndTiktokData.map((el) => (
                             <SwiperSlide key={el.img}>
-                                <Thumbnail width={200} img={el.img}></Thumbnail>
+                                <Thumbnail
+                                    type={'horizontal'}
+                                    img={el.img}></Thumbnail>
                             </SwiperSlide>
                         ))}
                     </Swiper>
