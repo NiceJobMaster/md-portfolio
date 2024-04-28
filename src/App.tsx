@@ -87,8 +87,11 @@ const App: React.FC = () => {
                         loop={true}
                         modules={[Pagination]}
                         breakpoints={{
-                            1230: {
+                            740: {
                                 slidesPerView: 5,
+                            },
+                            1230: {
+                                slidesPerView: 7,
                             },
                         }}
                         className="vertSwiper">
