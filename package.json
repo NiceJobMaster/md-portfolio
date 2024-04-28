@@ -4,6 +4,14 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "browserslist": [
+        "defaults",
+        "not ie < 11",
+        "last 2 versions",
+        "> 1%",
+        "iOS 7",
+        "last 3 iOS versions"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack-cli serve --mode=development --env development --open --hot",
@@ -28,6 +36,7 @@
         "@types/webpack-dev-server": "^4.7.2",
         "@typescript-eslint/eslint-plugin": "^7.7.1",
         "@typescript-eslint/parser": "^7.7.1",
+        "autoprefixer": "^10.4.19",
         "css-loader": "^7.1.1",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
@@ -38,6 +47,7 @@
         "gh-pages": "^6.1.1",
         "html-webpack-plugin": "^5.6.0",
         "node-sass": "^9.0.0",
+        "postcss-loader": "^8.1.1",
         "prettier": "^3.2.5",
         "sass-loader": "^14.2.1",
         "style-loader": "^4.0.0",
