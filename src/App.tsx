@@ -12,7 +12,7 @@ import './styles.scss';
 
 const App: React.FC = () => {
     const [tiktokData, setTiktokData] = useState([]);
-    const [shortAndTiktokData, setShortAndTiktokData] = useState([...shorts]);
+    const [shortAndTiktokData, setShortAndTiktokData] = useState([]);
 
     const getJSON = async (url: string) => {
         try {
@@ -28,10 +28,15 @@ const App: React.FC = () => {
 
     const getData = () => {
         tiktok.map((el) =>
-            getJSON(el.link).then((data) =>
+            getJSON(el.apiLink).then((data) =>
                 setTiktokData((prevData) => [
                     ...prevData,
-                    ...[{img: data.thumbnail_url}],
+                    ...[
+                        {
+                            img: data.thumbnail_url,
+                            link: el.link,
+                        },
+                    ],
                 ]),
             ),
         );
@@ -73,7 +78,8 @@ const App: React.FC = () => {
                             <SwiperSlide key={el.img}>
                                 <Thumbnail
                                     type={'vertical'}
-                                    img={el.img}></Thumbnail>
+                                    img={el.img}
+                                    link={el.link}></Thumbnail>
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -99,156 +105,13 @@ const App: React.FC = () => {
                             <SwiperSlide key={el.img}>
                                 <Thumbnail
                                     type={'horizontal'}
-                                    img={el.img}></Thumbnail>
+                                    img={el.img}
+                                    link={el.link}></Thumbnail>
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 </div>
             )}
-            {/* 
-            <div id="modal1" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/MwmHOsmjVcM"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal2" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/AyRlpz7RU30"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal3" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/oeWSh7_xs4A"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal4" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/H0FtI0_H1LE"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal5" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/muLopAY_DAI"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal6" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/9B0SK2pguF0"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal7" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/AMXJ_z4oLhg"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal8" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/XEoS9O5cO-Q"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal9" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/xB2WeFkvhJg"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal10" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/0Xfj4CUidhw"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-
-            <div id="modal11" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/cHsDZPWwxV4"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal12" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/fkziwfG2D14"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal13" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/kAMl4ci_Ngg"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal14" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="315"
-                        height="560"
-                        src="https://www.youtube.com/embed/eLwE1qm1cIQ"
-                        allowFullScreen></iframe>
-                    <iframe
-                        width="315"
-                        height="560"
-                        src="https://www.youtube.com/embed/iEVaxBIvUD4"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen></iframe>
-                </div>
-            </div>
-            <div id="modal15" className="modal">
-                <div className="modal-content">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.tiktok.com/embed/v2/7171434026929081605"
-                        allowFullScreen></iframe>
-                </div>
-            </div> */}
         </div>
     );
 };
