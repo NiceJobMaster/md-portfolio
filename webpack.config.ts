@@ -2,6 +2,7 @@ import path from 'path';
 import {Configuration as WebpackConfiguration, DefinePlugin} from 'webpack';
 import {Configuration as WebpackDevServerConfiguration} from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 interface Configuration extends WebpackConfiguration {
@@ -21,6 +22,7 @@ const webpackConfig = (): Configuration => ({
     output: {
         path: path.join(__dirname, '/build'),
         filename: 'build.js',
+        clean: true,
     },
     module: {
         rules: [
@@ -44,14 +46,7 @@ const webpackConfig = (): Configuration => ({
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
-                                plugins: [
-                                    [
-                                        'autoprefixer',
-                                        {
-                                            // Options
-                                        },
-                                    ],
-                                ],
+                                plugins: [['autoprefixer']],
                             },
                         },
                     },
@@ -68,6 +63,10 @@ const webpackConfig = (): Configuration => ({
         new HtmlWebpackPlugin({
             // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
             template: './public/index.html',
+            favicon: './public/rocket.svg',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{from: 'public/manifest.json', to: '.'}],
         }),
         // DefinePlugin allows you to create global constants which can be configured at compile time
         new DefinePlugin({
