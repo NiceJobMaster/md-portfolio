@@ -6,7 +6,8 @@ import {tiktok} from './common/tiktok';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import {Pagination} from 'swiper/modules';
+import 'swiper/css/navigation';
+import {Navigation, Pagination} from 'swiper/modules';
 
 import './styles.scss';
 
@@ -64,11 +65,16 @@ const App: React.FC = () => {
                     <Swiper
                         slidesPerView={3}
                         centeredSlides={true}
+                        slideToClickedSlide={true}
+                        loop={true}
+                        loopAdditionalSlides={4}
+                        modules={[Pagination, Navigation]}
                         pagination={{
                             clickable: true,
                         }}
-                        loop={true}
-                        modules={[Pagination]}
+                        navigation={{
+                            enabled: true,
+                        }}
                         breakpoints={{
                             1230: {
                                 slidesPerView: 5,
@@ -85,13 +91,19 @@ const App: React.FC = () => {
                     </Swiper>
 
                     <Swiper
+                        className="vertSwiper"
+                        slideToClickedSlide={true}
                         slidesPerView={3}
                         centeredSlides={true}
+                        loop={true}
+                        loopAdditionalSlides={4}
+                        modules={[Pagination, Navigation]}
                         pagination={{
                             clickable: true,
                         }}
-                        loop={true}
-                        modules={[Pagination]}
+                        navigation={{
+                            enabled: true,
+                        }}
                         breakpoints={{
                             740: {
                                 slidesPerView: 5,
@@ -99,8 +111,7 @@ const App: React.FC = () => {
                             1230: {
                                 slidesPerView: 7,
                             },
-                        }}
-                        className="vertSwiper">
+                        }}>
                         {shortAndTiktokData.map((el) => (
                             <SwiperSlide key={el.img}>
                                 <Thumbnail

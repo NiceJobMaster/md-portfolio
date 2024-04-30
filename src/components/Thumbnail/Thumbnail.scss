@@ -10,10 +10,12 @@ img {
 
 .horizontal {
     max-width: 200px;
+    aspect-ratio: 9/16;
 }
 
 .vertical {
     max-width: 400px;
+    aspect-ratio: 16/9;
 }
 
 .video-container {

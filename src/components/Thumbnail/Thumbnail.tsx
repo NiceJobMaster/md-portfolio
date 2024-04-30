@@ -24,9 +24,9 @@ const Thumbnail: React.FC<Props> = ({img, link, type}) => {
 
     return (
         <>
-            <a className="carousel-item" onClick={carouselItemHandle}>
+            <div className="carousel-item" onClick={carouselItemHandle}>
                 <img className={type} src={img} alt="Thumbnail" />
-            </a>
+            </div>
             {modalOpen &&
                 createPortal(
                     <Modal closeModal={modalCloseHandler}>
