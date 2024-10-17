@@ -1,0 +1,118 @@
+.swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100vw / 5);
+    max-height: 400px;
+}
+
+.swiper-pagination-bullet {
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: white;
+}
+
+.swiper-slide {
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #191919;
+
+    img {
+        opacity: 0.3;
+        transform: scale3d(0.8, 0.8, 1);
+        transition: transform 1400ms ease;
+    }
+
+    .carousel-item {
+        pointer-events: none;
+    }
+}
+
+.vertSwiper {
+    height: calc(100vw / 2.5);
+    max-height: 560px;
+}
+
+.swiper-slide-active {
+    z-index: 2;
+
+    img {
+        opacity: 1;
+        transform: scale3d(1.3, 1.3, 1);
+    }
+    .carousel-item {
+        pointer-events: all;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            mask-image: url(../../assets/play.svg);
+            mask-repeat: no-repeat;
+        }
+    }
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    z-index: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+
+    --swiper-navigation-size: 24px;
+}
+
+@media screen and (max-width: 1230px) {
+    .swiper {
+        height: calc(100vw / 3);
+        max-height: 410px;
+    }
+
+    .vertSwiper {
+        height: calc(100vw / 1.4);
+        max-height: 560px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .vertSwiper {
+        height: calc(100vw / 0.7);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .swiper {
+        height: calc(100vw / 1.7);
+
+        .swiper-slide-active {
+            img {
+                transform: scale3d(2, 2, 1);
+            }
+        }
+    }
+
+    .vertSwiper {
+        height: calc(100vw / 1);
+
+        .swiper-slide-active {
+            img {
+                transform: scale3d(1.3, 1.3, 1);
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import path from 'path';
-import {Configuration as WebpackConfiguration, DefinePlugin} from 'webpack';
-import {Configuration as WebpackDevServerConfiguration} from 'webpack-dev-server';
+import { Configuration as WebpackConfiguration, DefinePlugin } from 'webpack';
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
@@ -13,11 +13,11 @@ const webpackConfig = (): Configuration => ({
     entry: './src/index.tsx',
     ...(process.env.production || !process.env.development
         ? {}
-        : {devtool: 'eval-source-map'}),
+        : { devtool: 'eval-source-map' }),
 
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
-        plugins: [new TsconfigPathsPlugin({configFile: './tsconfig.json'})],
+        plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
     },
     output: {
         path: path.join(__dirname, '/build'),
@@ -40,8 +40,11 @@ const webpackConfig = (): Configuration => ({
                     'style-loader',
                     {
                         loader: 'css-loader',
-                        options: {importLoaders: 1},
+                        options: {
+                            importLoaders: 1,
+                        },
                     },
+                    'sass-loader',
                     {
                         loader: 'postcss-loader',
                         options: {
@@ -51,6 +54,17 @@ const webpackConfig = (): Configuration => ({
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: {
+                    loader: 'file-loader',
+                    options: 'src/assets/[name].[ext]',
+                },
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
             },
         ],
     },
@@ -66,7 +80,7 @@ const webpackConfig = (): Configuration => ({
             favicon: './public/rocket.svg',
         }),
         new CopyWebpackPlugin({
-            patterns: [{from: 'public/manifest.json', to: '.'}],
+            patterns: [{ from: 'public/manifest.json', to: '.' }],
         }),
         // DefinePlugin allows you to create global constants which can be configured at compile time
         new DefinePlugin({

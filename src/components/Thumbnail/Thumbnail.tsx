@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Thumbnail.scss';
-import {Modal} from '../Modal/Modal';
-import {createPortal} from 'react-dom';
+import { Modal } from '../Modal/Modal';
+import { createPortal } from 'react-dom';
 
 type Props = {
     img: string;
@@ -9,7 +9,7 @@ type Props = {
     type: 'horizontal' | 'vertical';
 };
 
-const Thumbnail: React.FC<Props> = ({img, link, type}) => {
+const Thumbnail: React.FC<Props> = ({ img, link, type }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const carouselItemHandle = () => {
@@ -20,7 +20,7 @@ const Thumbnail: React.FC<Props> = ({img, link, type}) => {
         setModalOpen(false);
     };
 
-    const aspectRatio = type === 'horizontal' ? 9 / 16 : 16 / 9;
+    const aspectRatio = type === 'vertical' ? 9 / 16 : 16 / 9;
 
     return (
         <>
@@ -33,19 +33,19 @@ const Thumbnail: React.FC<Props> = ({img, link, type}) => {
                         <div
                             style={{
                                 maxWidth:
-                                    type === 'vertical'
+                                    type === 'horizontal'
                                         ? window.innerWidth
                                         : (window.innerHeight * 0.9 - 56) *
                                           0.56,
                                 maxHeight:
-                                    type === 'horizontal'
+                                    type === 'vertical'
                                         ? window.innerHeight * 0.9 - 56 >
                                           (window.innerWidth * 0.9 - 56) * 1.77
                                             ? (window.innerWidth * 0.9 - 56) *
                                               1.77
                                             : window.innerHeight * 0.9 - 56
                                         : 'unset',
-                                height: type === 'horizontal' ? 1080 : 'unset',
+                                height: type === 'vertical' ? 1080 : 'unset',
                             }}
                             className="video-container">
                             <iframe

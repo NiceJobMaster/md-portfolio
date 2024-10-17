@@ -19,22 +19,137 @@
         }
     },
     "plugins": [
-        "@typescript-eslint",
         "react",
-        "react-hooks",
+        "@typescript-eslint",
         "eslint-plugin-import",
-        "prettier"
+        "prettier",
+        "react-hooks"
     ],
     "rules": {
         "react-hooks/rules-of-hooks": "error",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "react/prop-types": "off",
         "prettier/prettier": [
             "error",
             {
                 "endOfLine": "auto"
             }
-        ]
+        ],
+        "react-hooks/exhaustive-deps": "error",
+        "react/jsx-curly-brace-presence": [
+            "error",
+            "never"
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-empty-object-type": "off",
+        "@typescript-eslint/no-unused-expressions": [
+            "error",
+            {
+                "allowShortCircuit": true,
+                "allowTernary": true
+            }
+        ],
+        "@typescript-eslint/no-wrapper-object-types": "off",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": [
+                    "property"
+                ],
+                "format": [
+                    "camelCase",
+                    "snake_case",
+                    "UPPER_CASE"
+                ],
+                "leadingUnderscore": "allow",
+                "filter": {
+                    "regex": "^(JIDSuffix|DefaultSeparatorComponent|DefaultSeparator|FileName|FileSize|Content-Type|Links)|(.*SMS.*)$",
+                    "match": false
+                },
+                "types": [
+                    "number"
+                ]
+            },
+            {
+                "selector": [
+                    "interface",
+                    "class"
+                ],
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": [
+                    "enum",
+                    "enumMember"
+                ],
+                "format": [
+                    "StrictPascalCase"
+                ]
+            }
+        ],
+        "@typescript-eslint/consistent-type-assertions": "error",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "args": "none",
+                "ignoreRestSiblings": true,
+                "vars": "all",
+                "caughtErrors": "none",
+                "varsIgnorePattern": "BlockedUsersTopic"
+            }
+        ],
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "arrow-body-style": [
+            "error",
+            "as-needed"
+        ],
+        "camelcase": "off",
+        "comma-dangle": [
+            "warn",
+            {
+                "arrays": "only-multiline",
+                "exports": "only-multiline",
+                "functions": "only-multiline",
+                "imports": "only-multiline",
+                "objects": "only-multiline"
+            }
+        ],
+        "eol-last": "error",
+        "no-alert": "error",
+        "no-console": "error",
+        "no-eval": "error",
+        "no-restricted-globals": [
+            "error",
+            "fdescribe",
+            "fit"
+        ],
+        "no-trailing-spaces": "error",
+        "no-unsafe-finally": "error",
+        "no-unused-vars": "off",
+        "no-var": "error",
+        "object-shorthand": "error",
+        "react/display-name": "off",
+        "react/prop-types": "off",
+        "indent": "off",
+        "@typescript-eslint/indent": "off",
+        "sort-imports": "off",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+        "sort-vars": "error"
     },
     "settings": {
         "react": {
