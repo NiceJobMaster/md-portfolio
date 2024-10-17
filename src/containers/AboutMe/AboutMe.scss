@@ -1,0 +1,62 @@
+@import '../../theme/mixins.scss';
+
+.aboutMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .aboutMeInfo {
+        @include textInfo;
+    }
+
+    .aboutMeMessage {
+        @include textMessage;
+    }
+
+    .photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 1440px;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            img {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .noExtend {
+        height: 600px;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0px -20px 30px 10px #191919;
+        }
+    }
+
+    .extendButton {
+        margin-top: 32px;
+    }
+}

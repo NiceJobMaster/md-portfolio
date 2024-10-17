@@ -13,9 +13,9 @@ export const Navbar = () => (
             <img className="logoLong" src={logoLong} />
         </div>
         <div className="navbarButtons">
-            <Button text="Projekty" onClick={() => {}} />
-            <Button text="O mnie" onClick={() => {}} />
-            <Button text="Kontakt" onClick={() => {}} />
+            <Button type="textButton" text="Projekty" onClick={() => {}} />
+            <Button type="textButton" text="O mnie" onClick={() => {}} />
+            <Button type="textButton" text="Kontakt" onClick={() => {}} />
         </div>
     </div>
 );
