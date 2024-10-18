@@ -1,0 +1,76 @@
+@import '../../theme/mixins.scss';
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contactInfo {
+        @include textInfo;
+    }
+
+    .contactMessage {
+        @include textMessage;
+    }
+
+    .contactWrapper {
+        display: flex;
+    }
+
+    .leftContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        background-color: #343434;
+
+        .contactText {
+            color: #fff;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+
+    .rightContainer {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #010101;
+        padding: 40px 56px;
+        width: 536px;
+        justify-content: space-between;
+
+        .infoWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .firstInfo {
+            width: 140px;
+        }
+
+        .secondInfo {
+            width: 242px;
+        }
+
+        .contactTextInfo,
+        .contactTextMessage {
+            color: #fff;
+            margin-top: 16px;
+            font-family: 'Eina';
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .contactTextMessage {
+            color: #a4a4a4;
+            margin-top: 8px;
+        }
+
+        .buttonWrapper {
+            display: flex;
+            align-self: flex-end;
+            width: 100%;
+        }
+    }
+}

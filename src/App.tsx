@@ -7,6 +7,7 @@ import { Navbar } from 'containers/Navbar/Navbar';
 import { Projects } from 'containers/Projects/Projects';
 import { Header } from 'containers/Header/Header';
 import { AboutMe } from 'containers/AboutMe/AboutMe';
+import { Contact } from 'containers/Contact/Contact';
 
 export interface ShortAndTiktokDataProp {
     img: string;
@@ -66,6 +67,7 @@ const App = () => {
                     <Header />
                     <Projects shortAndTiktokData={shortAndTiktokData} />
                     <AboutMe />
+                    <Contact />
                 </>
             )}
         </>

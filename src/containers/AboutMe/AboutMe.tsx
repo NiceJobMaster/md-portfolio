@@ -66,7 +66,7 @@ export const AboutMe = () => {
             </div>
             <div className="extendButton">
                 <Button
-                    type="bigButton"
+                    style="bigButton"
                     text={isExtend ? 'ZWIŃ' : 'ROZWIŃ'}
                     onClick={extend}
                 />

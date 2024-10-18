@@ -3,12 +3,17 @@ import './Button.scss';
 
 interface ButtonProps {
     text: string;
-    onClick: () => void;
-    type: 'textButton' | 'bigButton';
+    onClick?: () => void;
+    style: 'textButton' | 'bigButton' | 'normalButton';
+    type?: 'submit';
+    color?: 'orange';
 }
 
-export const Button = ({ text, onClick, type }: ButtonProps) => (
-    <button className={`button ${type}`} onClick={onClick}>
+export const Button = ({ text, onClick, style, type, color }: ButtonProps) => (
+    <button
+        className={`button ${style} ${color}`}
+        onClick={onClick}
+        type={type}>
         {text}
     </button>
 );
