@@ -58,5 +58,14 @@
 
     .extendButton {
         margin-top: 32px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .aboutMe {
+        .extendButton {
+            width: 114px;
+        }
     }
 }

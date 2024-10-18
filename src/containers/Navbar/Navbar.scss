@@ -30,3 +30,23 @@
         gap: 80px;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .navbar {
+        padding: 10px 23px;
+
+        .logoShort {
+            width: 48px;
+            height: 20px;
+        }
+
+        .logoLong {
+            width: 54px;
+            height: 11px;
+        }
+
+        .navbarButtons {
+            gap: 20px;
+        }
+    }
+}

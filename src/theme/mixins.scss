@@ -4,21 +4,33 @@
     font-weight: 400;
     font-size: 60px;
     margin-top: 85px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 25px;
+    }
 }
 
 @mixin textMessage {
     color: #b4b4b4;
-    width: 1030px;
+    max-width: 1030px;
+    width: 100%;
     font-weight: 500;
     font-size: 30px;
     text-align: center;
-    margin-top: 32px;
-    margin-bottom: 55px;
+    padding: 32px 51px 55px 51px;
 
     span {
         color: #fff;
         font-weight: 800;
         font-size: 30px;
         font-style: italic;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 15px;
+
+        span {
+            font-size: 15px;
+        }
     }
 }

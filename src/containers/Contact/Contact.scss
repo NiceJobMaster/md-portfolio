@@ -35,7 +35,8 @@
         flex-wrap: wrap;
         background-color: #010101;
         padding: 40px 56px;
-        width: 536px;
+        max-width: 536px;
+        width: 100%;
         justify-content: space-between;
 
         .infoWrapper {
@@ -47,10 +48,20 @@
 
         .firstInfo {
             width: 140px;
+
+            img {
+                width: auto;
+                height: 100px;
+            }
         }
 
         .secondInfo {
             width: 242px;
+
+            img {
+                width: auto;
+                height: 100px;
+            }
         }
 
         .contactTextInfo,
@@ -71,6 +82,56 @@
             display: flex;
             align-self: flex-end;
             width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contact {
+        .contactWrapper {
+            flex-direction: column;
+        }
+
+        .leftContainer {
+            align-items: center;
+        }
+
+        .rightContainer {
+            padding: 30px 50px;
+            min-height: 360px;
+
+            .contactTextInfo,
+            .contactTextMessage {
+                font-size: 10px;
+            }
+
+            .firstInfo {
+                width: 100px;
+
+                img {
+                    width: auto;
+                    height: 50px;
+                }
+            }
+
+            .secondInfo {
+                width: 174px;
+
+                img {
+                    width: auto;
+                    height: 50px;
+                }
+            }
+
+            .buttonWrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                button {
+                    width: 234px;
+                }
+            }
         }
     }
 }

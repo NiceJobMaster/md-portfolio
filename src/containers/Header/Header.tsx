@@ -13,12 +13,12 @@ export const Header = () => (
             TWORZĘ filmy i PROWADZĘ social media dla firm oraz influencerów.
         </div>
         <div className="photoHeaderWrapper">
+            <div className="socialPhotos">
+                <img className="photoTT" src={photoTT} />
+                <img className="photoYT" src={photoYT} />
+                <img className="photoIG" src={photoIG} />
+            </div>
             <img className="photoHeader" src={photoHeader} />
-        </div>
-        <div className="socialPhotos">
-            <img className="photoTT" src={photoTT} />
-            <img className="photoYT" src={photoYT} />
-            <img className="photoIG" src={photoIG} />
         </div>
     </div>
 );

@@ -14,8 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 150px;
-    width: 400px;
+    height: 72px;
     border-radius: 15px;
     background-color: #c1c1c14f;
     font-size: 25px;
@@ -38,4 +37,20 @@
 
 .textColorGray {
     color: rgba(189, 189, 189, 0.73);
+}
+
+@media screen and (max-width: 1000px) {
+    .bigButton {
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .normalButton {
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .button {
+        font-size: 10px;
+    }
 }
