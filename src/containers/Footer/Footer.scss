@@ -1,0 +1,40 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background: #343434;
+    padding: 32px 87px;
+    margin-top: 85px;
+    align-items: center;
+
+    .topFooter {
+        display: flex;
+        width: 100%;
+        margin-left: 15px;
+        justify-content: space-between;
+    }
+
+    .firstFooter {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .footerText {
+        color: rgba(189, 189, 189, 0.73);
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .buttonWrapper {
+        display: flex;
+        gap: 142px;
+        margin-right: 289px;
+    }
+
+    .line {
+        margin: 30px 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(189, 189, 189, 0.73);
+    }
+}

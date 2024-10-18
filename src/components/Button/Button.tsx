@@ -7,11 +7,19 @@ interface ButtonProps {
     style: 'textButton' | 'bigButton' | 'normalButton';
     type?: 'submit';
     color?: 'orange';
+    textColor?: 'textColorGray';
 }
 
-export const Button = ({ text, onClick, style, type, color }: ButtonProps) => (
+export const Button = ({
+    text,
+    onClick,
+    style,
+    type,
+    color,
+    textColor,
+}: ButtonProps) => (
     <button
-        className={`button ${style} ${color}`}
+        className={`button ${style} ${color} ${textColor}`}
         onClick={onClick}
         type={type}>
         {text}

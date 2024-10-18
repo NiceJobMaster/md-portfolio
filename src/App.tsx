@@ -8,6 +8,7 @@ import { Projects } from 'containers/Projects/Projects';
 import { Header } from 'containers/Header/Header';
 import { AboutMe } from 'containers/AboutMe/AboutMe';
 import { Contact } from 'containers/Contact/Contact';
+import { Footer } from 'containers/Footer/Footer';
 
 export interface ShortAndTiktokDataProp {
     img: string;
@@ -68,6 +69,7 @@ const App = () => {
                     <Projects shortAndTiktokData={shortAndTiktokData} />
                     <AboutMe />
                     <Contact />
+                    <Footer />
                 </>
             )}
         </>
