@@ -77,7 +77,7 @@ const webpackConfig = (): Configuration => ({
         new HtmlWebpackPlugin({
             // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
             template: './public/index.html',
-            favicon: './public/rocket.svg',
+            favicon: './public/favicon.svg',
         }),
         new CopyWebpackPlugin({
             patterns: [{ from: 'public/manifest.json', to: '.' }],
