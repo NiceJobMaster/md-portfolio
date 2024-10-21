@@ -10,6 +10,15 @@
     width: 100%;
 }
 
+.textButton {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
 .bigButton {
     display: flex;
     justify-content: center;
@@ -20,19 +29,35 @@
     font-size: 25px;
     font-weight: 800;
     box-shadow: 0px 4px 4px 0px #00000040;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.39);
+    }
 }
 
 .normalButton {
     height: 48px;
     border-radius: 25px;
     border: 1px solid #fff;
-    background: #000;
+    background-color: #000;
     font-size: 20px;
     font-weight: 700;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: #353232;
+    }
 }
 
 .orange {
     background-color: #f95641;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: #df5b4a;
+    }
 }
 
 .textColorGray {

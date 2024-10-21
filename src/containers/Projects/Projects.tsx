@@ -9,7 +9,7 @@ interface ProjectsProps {
 }
 
 export const Projects = ({ shortAndTiktokData }: ProjectsProps) => (
-    <div className="projects">
+    <div className="projects" id="projects">
         <div className="projectsInfo">PROJEKTY</div>
         <div className="projectsMessage">
             Realizuję wszystkie formy wideo -{' '}

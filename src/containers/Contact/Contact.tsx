@@ -8,7 +8,7 @@ import facebookImage from 'assets/Facebook.png';
 import { Button } from 'components/Button/Button';
 
 export const Contact = () => (
-    <div className="contact">
+    <div className="contact" id="contact">
         <div className="contactInfo">BĄDŹMY W KONTAKCIE</div>
         <div className="contactMessage">
             Potrzebujesz wyceny? Więcej szczegółów na temat mojej działalności?

@@ -19,7 +19,7 @@ export const AboutMe = () => {
     const photosStyles = isExtend ? 'photos' : 'photos noExtend';
 
     return (
-        <div className="aboutMe">
+        <div className="aboutMe" id="aboutMe">
             <div className="aboutMeInfo">O MNIE</div>
             <div className="aboutMeMessage">
                 Za moim doświadczeniem stoi wiele udanych projektów, które
