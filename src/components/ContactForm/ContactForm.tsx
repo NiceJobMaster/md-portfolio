@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { Button } from 'components/Button/Button';
 import './ContactForm.scss';
+import { Loader } from 'components/Loader/Loader';
 
 export const ContactForm = () => {
     const [name, setName] = useState('');
@@ -9,39 +10,54 @@ export const ContactForm = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
+    const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
-    const [error, setError] = useState('');
+    const [error, setError] = useState<Error>();
 
-    function submit(e) {
+    async function submit(e) {
         e.preventDefault();
 
-        fetch('http://localhost:3000/mail', {
+        setLoading(true);
+        await fetch('https://woodpeckers-productions.pl/server.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
             },
-            body: JSON.stringify({ email, message }),
+            body: JSON.stringify({
+                email,
+                first_name: name,
+                last_name: surname,
+                message,
+            }),
         })
-            .then(res => res.json())
             .then(res => {
-                if (res.code === 200) {
-                    setSubmitted(true);
-                } else {
-                    setError(res.message);
+                if (!res.ok) {
+                    throw new Error(res.statusText);
                 }
+                return setSubmitted(true);
             })
             .catch(error => setError(error));
+        setLoading(false);
+    }
+
+    if (loading) {
+        return (
+            <div className="contactFormMessage">
+                <Loader type="small" />
+            </div>
+        );
     }
 
     if (error) {
-        return <p>{error}</p>;
+        return <p className="contactFormMessage">{error.message}</p>;
     }
 
     if (submitted) {
         return (
-            <p>
-                We&apos;ve received your message, thank you for contacting us!
+            <p className="contactFormMessage">
+                Wiadomość wysłana. <br />
+                Dziękuję {name}, skontaktujemy się z Tobą wkrótce.
             </p>
         );
     }
@@ -78,6 +94,7 @@ export const ContactForm = () => {
                 id="message"
                 value={message}
                 onChange={e => setMessage(e.target.value)}
+                required
             />
             <div className="buttonWrapper">
                 <Button type="submit" text="WYŚLIJ" style="normalButton" />

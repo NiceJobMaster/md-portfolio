@@ -22,6 +22,7 @@
         flex-direction: column;
         padding: 40px;
         background-color: #343434;
+        height: 560px;
 
         .contactText {
             color: #fff;
@@ -94,6 +95,7 @@
 
         .leftContainer {
             align-items: center;
+            height: auto;
         }
 
         .rightContainer {

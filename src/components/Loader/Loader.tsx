@@ -1,8 +1,12 @@
 import React from 'react';
 import './Loader.scss';
 
-export const Loader = () => (
-    <div className="loadingWrapper">
+interface LoaderProps {
+    type?: 'small';
+}
+
+export const Loader = ({ type }: LoaderProps) => (
+    <div className={`loadingWrapper ${type}`}>
         <div className="loading"></div>
     </div>
 );

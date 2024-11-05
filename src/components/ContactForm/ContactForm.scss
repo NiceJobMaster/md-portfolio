@@ -1,3 +1,5 @@
+@import '../../theme/mixins.scss';
+
 .contactForm {
     display: flex;
     flex-direction: column;
@@ -33,6 +35,14 @@
     }
 }
 
+.contactFormMessage {
+    @include textMessage;
+    font-size: 20px;
+    padding: 0;
+    padding-top: 32px;
+    width: 304px;
+}
+
 @media screen and (max-width: 1000px) {
     .contactForm {
         input,
@@ -43,5 +53,9 @@
         textarea {
             height: 60px;
         }
+    }
+
+    .contactFormMessage {
+        width: 234px;
     }
 }

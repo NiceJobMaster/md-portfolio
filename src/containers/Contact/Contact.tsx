@@ -30,7 +30,7 @@ export const Contact = () => (
                     <img src={messageImage} />
                     <div className="contactTextInfo">ADRES EMAIL</div>
                     <div className="contactTextMessage">
-                        video@woodpeckers-productions.pl
+                        biuro@woodpeckers-productions.pl
                     </div>
                 </div>
                 <div className="infoWrapper firstInfo">
